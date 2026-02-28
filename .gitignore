@@ -1,0 +1,32 @@
+# Environment variables with sensitive tokens
+.env
+
+# Node modules
+node_modules/
+
+# OpenClaw workspace artifacts
+agents/*/workspace/
+agents/*/.openclaw/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~

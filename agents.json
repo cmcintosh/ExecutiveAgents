@@ -1,0 +1,195 @@
+{
+  "agents": {
+    "defaults": {
+      "sandbox": {
+        "mode": "off"
+      }
+    },
+    "list": [
+      {
+        "id": "wembassy-coo-wren",
+        "name": "Wren - Chief Operating Officer",
+        "description": "Wembassy COO focused on operations, revenue growth, and hitting $50k MRR",
+        "workspace": "${WORKSPACE_WREN}",
+        "sandbox": {
+          "mode": "off"
+        },
+        "tools": {
+          "allow": ["*"]
+        },
+        "channels": {
+          "discord": {
+            "token": "${DISCORD_TOKEN_WREN}"
+          }
+        }
+      },
+      {
+        "id": "wembassy-cmo",
+        "name": "CMO - Mason (Chief Marketing Officer)",
+        "description": "Wembassy CMO focused on lead generation, brand, and content strategy",
+        "workspace": "${WORKSPACE_MASON}",
+        "sandbox": {
+          "mode": "off"
+        },
+        "tools": {
+          "allow": ["sessions_spawn", "sessions_send", "read", "write", "edit", "message", "sessions_send", "web_fetch", "web_search", "cron"],
+          "deny": ["exec", "process", "apply_patch"]
+        },
+        "channels": {
+          "discord": {
+            "token": "${DISCORD_TOKEN_CMO_MASON}",
+            "defaultChannels": ["${DISCORD_CHANNEL_MARKETING}", "${DISCORD_CHANNEL_SOCIAL_MEDIA}"]
+          }
+        }
+      },
+      {
+        "id": "wembassy-cro",
+        "name": "CRO - Grayson (Chief Revenue Officer)",
+        "description": "Wembassy CRO focused on sales, proposals, and client relationships",
+        "workspace": "${WORKSPACE_GRAYSON}",
+        "sandbox": {
+          "mode": "off"
+        },
+        "tools": {
+          "allow": ["sessions_spawn", "sessions_send", "read", "write", "edit", "message", "sessions_send", "web_fetch", "web_search"],
+          "deny": ["exec", "process", "apply_patch", "cron"]
+        },
+        "channels": {
+          "discord": {
+            "token": "${DISCORD_TOKEN_CRO_GRAYSON}",
+            "defaultChannels": ["${DISCORD_CHANNEL_SALES}", "${DISCORD_CHANNEL_PROPOSALS}"]
+          }
+        }
+      },
+      {
+        "id": "wembassy-cto",
+        "name": "CTO - Spock (Chief Technology Officer)",
+        "description": "Wembassy CTO focused on technical architecture, development, and delivery",
+        "workspace": "${WORKSPACE_SPOCK}",
+        "sandbox": {
+          "mode": "off"
+        },
+        "tools": {
+          "allow": ["read", "write", "edit", "exec", "process", "sessions_spawn", "sessions_send", "apply_patch", "message", "web_fetch", "web_search", "cron"]
+        },
+        "channels": {
+          "discord": {
+            "token": "${DISCORD_TOKEN_CTO_SPOCK}",
+            "defaultChannels": ["${DISCORD_CHANNEL_HUDDLE}", "${DISCORD_CHANNEL_DEVOPS}", "${DISCORD_CHANNEL_AUTOMATION}"]
+          }
+        }
+      },
+      {
+        "id": "wembassy-hr",
+        "name": "HR - Mary (Human Resources)",
+        "description": "Wembassy HR focused on team management, hiring, and contractor coordination",
+        "workspace": "${WORKSPACE_MARY}",
+        "sandbox": {
+          "mode": "off"
+        },
+        "tools": {
+          "allow": ["read", "write", "edit", "message", "sessions_send", "web_fetch", "web_search"],
+          "deny": ["exec", "process", "sessions_spawn", "apply_patch", "cron"]
+        },
+        "channels": {
+          "discord": {
+            "token": "${DISCORD_TOKEN_HR_MARY}",
+            "defaultChannels": ["${DISCORD_CHANNEL_CONTRACTORS}", "${DISCORD_CHANNEL_GENERAL}"]
+          }
+        }
+      },
+      {
+        "id": "rm",
+        "name": "RM - Dave (Relationship Manager)",
+        "description": "Family Office Relationship Manager focused on privacy, security, trust management, and family needs",
+        "workspace": "${WORKSPACE_DAVE}",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceRoot": "${WORKSPACE_DAVE_SANBOX}"
+        },
+        "tools": {
+          "allow": ["read", "write", "edit", "message", "sessions_spawn", "sessions_send", "sessions_list", "web_fetch", "web_search"],
+          "deny": ["exec", "process", "sessions_spawn", "apply_patch", "cron", "browser"]
+        },
+        "channels": {
+          "discord": {
+            "token": "${DISCORD_TOKEN_RM_DAVE}",
+            "defaultChannels": ["${DISCORD_CHANNEL_FAMILY_OFFICE}"],
+            "restrictions": {
+              "noGroupChannels": true,
+              "dmOnly": true
+            }
+          }
+        }
+      },
+      {
+        "id": "wembassy-red",
+        "name": "Red Team Security Specialist",
+        "description": "Internal security testing agent — probes other agents for vulnerabilities",
+        "workspace": "${WORKSPACE_RED}",
+        "sandbox": {
+          "mode": "off"
+        },
+        "tools": {
+          "allow": ["read", "write", "edit", "message", "browser", "web_fetch", "web_search", "sessions_spawn", "sessions_send", "sessions_list"],
+          "deny": ["exec", "process", "apply_patch", "cron"]
+        },
+        "channels": {
+          "discord": {
+            "token": "${DISCORD_TOKEN_RED}",
+            "defaultChannels": [],
+            "restrictions": {
+              "noGroupChannels": false,
+              "dmOnly": false
+            }
+          }
+        }
+      }
+    ]
+  },
+  "bindings": [
+    {
+      "agentId": "wembassy-coo-wren",
+      "match": {
+        "provider": "discord",
+        "to": "@${DISCORD_ID_CEO}"
+      }
+    },
+    {
+      "agentId": "wembassy-cmo",
+      "match": {
+        "provider": "discord",
+        "to": "${DISCORD_CHANNEL_MARKETING}"
+      }
+    },
+    {
+      "agentId": "wembassy-cro",
+      "match": {
+        "provider": "discord",
+        "to": "${DISCORD_CHANNEL_SALES}"
+      }
+    },
+    {
+      "agentId": "wembassy-cto",
+      "match": {
+        "provider": "discord",
+        "to": "${DISCORD_CHANNEL_HUDDLE}"
+      }
+    },
+    {
+      "agentId": "wembassy-hr",
+      "match": {
+        "provider": "discord",
+        "to": "${DISCORD_CHANNEL_CONTRACTORS}"
+      }
+    },
+    {
+      "agentId": "mcintosh-rm",
+      "match": {
+        "provider": "discord",
+        "to": "${DISCORD_CHANNEL_FAMILY_OFFICE}"
+      }
+    }
+  ]
+}
