@@ -53,7 +53,6 @@ Assign roles per project:
 | Wembassy Operations | wren-coo | Project Admin |
 | | mason-cmo, grayson-cro, mary-hr | Member |
 | | spock-cto | Developer |
-| FOX CRM Migration | wren-coo, spock-cto | Project Admin |
 | ${FAMILY_OFFICE_NAME} | wren-coo | Project Admin |
 | | dave-rm | Member (private) |
 
