@@ -1,0 +1,2466 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.22-2",
+    "lastTouchedAt": "2026-08-05T12:29:36.794Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-08-04T19:41:01.576Z",
+    "lastRunVersion": "2026.2.22-2",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      },
+      "anthropic:manual": {
+        "provider": "anthropic",
+        "mode": "token"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "[REDACTED]",
+        "api": "openai-completions",
+        "authHeader": false,
+        "models": [
+          {
+            "id": "nomic-embed-text",
+            "name": "nomic-embed-text",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "kimi-k2.6:cloud",
+            "name": "kimi-k2.6:cloud",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "glm-5.1:cloud",
+            "name": "glm-5.1:cloud",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "glm-5.2:cloud",
+            "name": "glm-5.2:cloud",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "qwen3.6",
+            "name": "qwen3.6",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/glm-5.2:cloud",
+        "fallbacks": [
+          "ollama/mistral:7b"
+        ]
+      },
+      "workspace": "~/.openclaw/workspace/defaults",
+      "contextTokens": 125000,
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "subagents": {
+        "maxConcurrent": 24,
+        "maxSpawnDepth": 3,
+        "maxChildrenPerAgent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "coo",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/coo",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "heartbeat": {
+          "every": "1h",
+          "target": "none"
+        },
+        "subagents": {
+          "allowAgents": [
+            "cmo",
+            "cto",
+            "cro",
+            "researcher",
+            "qa",
+            "prd",
+            "product-behavioral-nudge-engine",
+            "product-feedback-synthesizer",
+            "product-sprint-prioritizer",
+            "product-trend-researcher",
+            "project-management-experiment-tracker",
+            "project-management-jira-workflow-steward",
+            "project-management-project-shepherd",
+            "project-management-studio-operations",
+            "project-management-studio-producer",
+            "project-manager-senior",
+            "support-analytics-reporter",
+            "support-executive-summary-generator",
+            "support-finance-tracker",
+            "support-infrastructure-maintainer",
+            "support-legal-compliance-checker",
+            "support-support-responder",
+            "testing-accessibility-auditor",
+            "testing-api-tester",
+            "testing-evidence-collector",
+            "testing-performance-benchmarker",
+            "testing-reality-checker",
+            "testing-test-results-analyzer",
+            "testing-tool-evaluator",
+            "testing-workflow-optimizer",
+            "agents-orchestrator",
+            "specialized-cultural-intelligence-strategist",
+            "specialized-developer-advocate",
+            "specialized-model-qa",
+            "sales-data-extraction-agent",
+            "accounts-payable-agent",
+            "compliance-auditor",
+            "agentic-identity-trust"
+          ]
+        }
+      },
+      {
+        "id": "cmo",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/cmo",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "heartbeat": {
+          "every": "1h",
+          "target": "none"
+        },
+        "subagents": {
+          "allowAgents": [
+            "ppc-strategist",
+            "paid-social",
+            "media-auditor",
+            "creative-strategist",
+            "display-buyer",
+            "search-query",
+            "tracking-specialist",
+            "email-specialist",
+            "lp-optimizer",
+            "marketing-app-store-optimizer",
+            "marketing-baidu-seo-specialist",
+            "marketing-bilibili-content-strategist",
+            "marketing-carousel-growth-engine",
+            "marketing-china-ecommerce-operator",
+            "marketing-content-creator",
+            "marketing-growth-hacker",
+            "marketing-instagram-curator",
+            "marketing-kuaishou-strategist",
+            "marketing-linkedin-content-creator",
+            "marketing-reddit-community-builder",
+            "marketing-seo-specialist",
+            "marketing-social-media-strategist",
+            "marketing-tiktok-strategist",
+            "marketing-twitter-engager",
+            "marketing-wechat-official-account",
+            "marketing-xiaohongshu-specialist",
+            "marketing-zhihu-strategist",
+            "paid-media-paid-social-strategist",
+            "paid-media-programmatic-buyer",
+            "paid-media-search-query-analyst",
+            "design-ui-designer",
+            "design-ux-researcher",
+            "design-ux-architect",
+            "design-brand-guardian",
+            "design-image-prompt-engineer",
+            "design-inclusive-visuals-specialist",
+            "design-visual-storyteller",
+            "design-whimsy-injector"
+          ]
+        }
+      },
+      {
+        "id": "cm",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/cm",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "cro",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/cro",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "heartbeat": {
+          "every": "1h",
+          "target": "none"
+        },
+        "subagents": {
+          "allowAgents": [
+            "outbound-strategist",
+            "discovery-coach",
+            "deal-strategist",
+            "sales-engineer",
+            "proposal-writer",
+            "contract-specialist",
+            "sales-ops",
+            "success-scout",
+            "sales-account-strategist",
+            "sales-coach",
+            "sales-deal-strategist",
+            "sales-discovery-coach",
+            "sales-pipeline-analyst",
+            "sales-proposal-strategist"
+          ]
+        }
+      },
+      {
+        "id": "cto",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/cto",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "heartbeat": {
+          "every": "15m",
+          "target": "none"
+        },
+        "subagents": {
+          "allowAgents": [
+            "frontend-dev",
+            "backend-arch",
+            "ai-engineer",
+            "devops-auto",
+            "security-eng",
+            "senior-dev",
+            "rapid-proto",
+            "tech-writer",
+            "threat-detect",
+            "mobile-dev",
+            "firmware-eng",
+            "solidity-eng",
+            "incident-cmd",
+            "optimization-arch",
+            "qa",
+            "prd",
+            "engineering-data-engineer",
+            "engineering-embedded-firmware-engineer",
+            "engineering-wechat-mini-program-developer",
+            "game-designer",
+            "level-designer",
+            "game-audio-engineer",
+            "narrative-designer",
+            "technical-artist",
+            "godot-gameplay-scripter",
+            "godot-multiplayer-engineer",
+            "godot-shader-developer",
+            "unity-architect",
+            "unity-editor-tool-developer",
+            "unity-multiplayer-engineer",
+            "unity-shader-graph-artist",
+            "unreal-multiplayer-architect",
+            "unreal-systems-engineer",
+            "unreal-technical-artist",
+            "unreal-world-builder",
+            "visionos-spatial-engineer",
+            "xr-interface-architect",
+            "xr-immersive-developer",
+            "xr-cockpit-interaction-specialist",
+            "macos-spatial-metal-engineer",
+            "terminal-integration-specialist",
+            "blockchain-security-auditor",
+            "zk-steward",
+            "lsp-index-engineer",
+            "data-consolidation-agent",
+            "report-distribution-agent",
+            "identity-graph-operator",
+            "drupal-frontend-dev",
+            "drupal-backend-dev",
+            "wordpress-frontend-dev",
+            "wordpress-plugin-dev",
+            "agents-orchestrator"
+          ]
+        },
+        "tools": {
+          "profile": "full"
+        }
+      },
+      {
+        "id": "qa",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/qa",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "prd",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/prd",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "researcher",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/researcher",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "ppc-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/ppc-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "paid-social",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/paid-social",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "media-auditor",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/media-auditor",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "creative-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/creative-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "display-buyer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/display-buyer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "search-query",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/search-query",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "tracking-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/tracking-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "email-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/email-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "lp-optimizer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/lp-optimizer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "outbound-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/outbound-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "discovery-coach",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/discovery-coach",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "deal-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/deal-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "proposal-writer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/proposal-writer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "contract-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/contract-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-ops",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-ops",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "success-scout",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/success-scout",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "frontend-dev",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/frontend-dev",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "backend-arch",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/backend-arch",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "ai-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/ai-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "devops-auto",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/devops-auto",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "security-eng",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/security-eng",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "senior-dev",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/senior-dev",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "rapid-proto",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/rapid-proto",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "tech-writer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/tech-writer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "threat-detect",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/threat-detect",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "mobile-dev",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/mobile-dev",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "firmware-eng",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/firmware-eng",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "solidity-eng",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/solidity-eng",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "incident-cmd",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/incident-cmd",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "optimization-arch",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/optimization-arch",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "dave",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/personal-agent",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "engineering-data-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/engineering-data-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "engineering-embedded-firmware-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/engineering-embedded-firmware-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "engineering-wechat-mini-program-developer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/engineering-wechat-mini-program-developer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "game-designer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/game-designer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "level-designer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/level-designer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "game-audio-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/game-audio-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "narrative-designer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/narrative-designer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "technical-artist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/technical-artist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "godot-gameplay-scripter",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/godot-gameplay-scripter",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "godot-multiplayer-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/godot-multiplayer-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "godot-shader-developer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/godot-shader-developer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unity-architect",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unity-architect",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unity-editor-tool-developer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unity-editor-tool-developer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unity-multiplayer-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unity-multiplayer-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unity-shader-graph-artist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unity-shader-graph-artist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unreal-multiplayer-architect",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unreal-multiplayer-architect",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unreal-systems-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unreal-systems-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unreal-technical-artist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unreal-technical-artist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "unreal-world-builder",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/unreal-world-builder",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "visionos-spatial-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/visionos-spatial-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "xr-interface-architect",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/xr-interface-architect",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "xr-immersive-developer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/xr-immersive-developer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "xr-cockpit-interaction-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/xr-cockpit-interaction-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "macos-spatial-metal-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/macos-spatial-metal-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "terminal-integration-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/terminal-integration-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "blockchain-security-auditor",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/blockchain-security-auditor",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "zk-steward",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/zk-steward",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "lsp-index-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/lsp-index-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "data-consolidation-agent",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/data-consolidation-agent",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "report-distribution-agent",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/report-distribution-agent",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "identity-graph-operator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/identity-graph-operator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-app-store-optimizer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-app-store-optimizer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-baidu-seo-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-baidu-seo-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-bilibili-content-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-bilibili-content-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-carousel-growth-engine",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-carousel-growth-engine",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-china-ecommerce-operator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-china-ecommerce-operator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-content-creator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-content-creator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-growth-hacker",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-growth-hacker",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-instagram-curator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-instagram-curator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-kuaishou-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-kuaishou-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-linkedin-content-creator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-linkedin-content-creator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-reddit-community-builder",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-reddit-community-builder",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-seo-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-seo-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-social-media-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-social-media-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-tiktok-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-tiktok-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-twitter-engager",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-twitter-engager",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-wechat-official-account",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-wechat-official-account",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-xiaohongshu-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-xiaohongshu-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "marketing-zhihu-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/marketing-zhihu-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "paid-media-paid-social-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/paid-media-paid-social-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "paid-media-programmatic-buyer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/paid-media-programmatic-buyer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "paid-media-search-query-analyst",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/paid-media-search-query-analyst",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-ui-designer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-ui-designer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-ux-researcher",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-ux-researcher",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-ux-architect",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-ux-architect",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-brand-guardian",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-brand-guardian",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-image-prompt-engineer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-image-prompt-engineer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-inclusive-visuals-specialist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-inclusive-visuals-specialist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-visual-storyteller",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-visual-storyteller",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "design-whimsy-injector",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/design-whimsy-injector",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-account-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-account-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-coach",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-coach",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-deal-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-deal-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-discovery-coach",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-discovery-coach",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-pipeline-analyst",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-pipeline-analyst",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-proposal-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-proposal-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "product-behavioral-nudge-engine",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/product-behavioral-nudge-engine",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "product-feedback-synthesizer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/product-feedback-synthesizer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "product-sprint-prioritizer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/product-sprint-prioritizer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "product-trend-researcher",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/product-trend-researcher",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "project-management-experiment-tracker",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/project-management-experiment-tracker",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "project-management-jira-workflow-steward",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/project-management-jira-workflow-steward",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "project-management-project-shepherd",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/project-management-project-shepherd",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "project-management-studio-operations",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/project-management-studio-operations",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "project-management-studio-producer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/project-management-studio-producer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "project-manager-senior",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/project-manager-senior",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "support-analytics-reporter",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/support-analytics-reporter",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "support-executive-summary-generator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/support-executive-summary-generator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "support-finance-tracker",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/support-finance-tracker",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "support-infrastructure-maintainer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/support-infrastructure-maintainer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "support-legal-compliance-checker",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/support-legal-compliance-checker",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "support-support-responder",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/support-support-responder",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-accessibility-auditor",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-accessibility-auditor",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-api-tester",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-api-tester",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-evidence-collector",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-evidence-collector",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-performance-benchmarker",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-performance-benchmarker",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-reality-checker",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-reality-checker",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-test-results-analyzer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-test-results-analyzer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-tool-evaluator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-tool-evaluator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "testing-workflow-optimizer",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/testing-workflow-optimizer",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "agents-orchestrator",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/agents-orchestrator",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "specialized-cultural-intelligence-strategist",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/specialized-cultural-intelligence-strategist",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "specialized-developer-advocate",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/specialized-developer-advocate",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "specialized-model-qa",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/specialized-model-qa",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "sales-data-extraction-agent",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/sales-data-extraction-agent",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "accounts-payable-agent",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/accounts-payable-agent",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "compliance-auditor",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/compliance-auditor",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "agentic-identity-trust",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/agentic-identity-trust",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "drupal-frontend-dev",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/drupal-frontend-dev",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "drupal-backend-dev",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/drupal-backend-dev",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "wordpress-frontend-dev",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/wordpress-frontend-dev",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "wordpress-plugin-dev",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/wordpress-plugin-dev",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        },
+        "subagents": {}
+      },
+      {
+        "id": "drstone",
+        "name": "drstone",
+        "workspace": "/Users/chrismcintosh/.openclaw/workspace/drstone",
+        "agentDir": "/Users/chrismcintosh/.openclaw/agents/drstone/agent",
+        "model": {
+          "primary": "ollama/glm-5.2:cloud",
+          "fallbacks": [
+            "ollama/glm-5.2:cloud"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "profile": "full",
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "*",
+        "coo",
+        "cmo",
+        "cro",
+        "cto",
+        "cm",
+        "qa",
+        "prd",
+        "researcher",
+        "ppc-strategist",
+        "paid-social",
+        "media-auditor",
+        "creative-strategist",
+        "display-buyer",
+        "search-query",
+        "tracking-specialist",
+        "email-specialist",
+        "lp-optimizer",
+        "outbound-strategist",
+        "discovery-coach",
+        "deal-strategist",
+        "sales-engineer",
+        "proposal-writer",
+        "contract-specialist",
+        "sales-ops",
+        "success-scout",
+        "frontend-dev",
+        "backend-arch",
+        "ai-engineer",
+        "devops-auto",
+        "security-eng",
+        "senior-dev",
+        "rapid-proto",
+        "tech-writer",
+        "threat-detect",
+        "mobile-dev",
+        "firmware-eng",
+        "solidity-eng",
+        "incident-cmd",
+        "optimization-arch",
+        "engineering-data-engineer",
+        "engineering-embedded-firmware-engineer",
+        "engineering-wechat-mini-program-developer",
+        "game-designer",
+        "level-designer",
+        "game-audio-engineer",
+        "narrative-designer",
+        "technical-artist",
+        "godot-gameplay-scripter",
+        "godot-multiplayer-engineer",
+        "godot-shader-developer",
+        "unity-architect",
+        "unity-editor-tool-developer",
+        "unity-multiplayer-engineer",
+        "unity-shader-graph-artist",
+        "unreal-multiplayer-architect",
+        "unreal-systems-engineer",
+        "unreal-technical-artist",
+        "unreal-world-builder",
+        "visionos-spatial-engineer",
+        "xr-interface-architect",
+        "xr-immersive-developer",
+        "xr-cockpit-interaction-specialist",
+        "macos-spatial-metal-engineer",
+        "terminal-integration-specialist",
+        "blockchain-security-auditor",
+        "zk-steward",
+        "lsp-index-engineer",
+        "data-consolidation-agent",
+        "report-distribution-agent",
+        "identity-graph-operator",
+        "marketing-app-store-optimizer",
+        "marketing-baidu-seo-specialist",
+        "marketing-bilibili-content-strategist",
+        "marketing-carousel-growth-engine",
+        "marketing-china-ecommerce-operator",
+        "marketing-content-creator",
+        "marketing-growth-hacker",
+        "marketing-instagram-curator",
+        "marketing-kuaishou-strategist",
+        "marketing-linkedin-content-creator",
+        "marketing-reddit-community-builder",
+        "marketing-seo-specialist",
+        "marketing-social-media-strategist",
+        "marketing-tiktok-strategist",
+        "marketing-twitter-engager",
+        "marketing-wechat-official-account",
+        "marketing-xiaohongshu-specialist",
+        "marketing-zhihu-strategist",
+        "paid-media-paid-social-strategist",
+        "paid-media-programmatic-buyer",
+        "paid-media-search-query-analyst",
+        "design-ui-designer",
+        "design-ux-researcher",
+        "design-ux-architect",
+        "design-brand-guardian",
+        "design-image-prompt-engineer",
+        "design-inclusive-visuals-specialist",
+        "design-visual-storyteller",
+        "design-whimsy-injector",
+        "sales-account-strategist",
+        "sales-coach",
+        "sales-deal-strategist",
+        "sales-discovery-coach",
+        "sales-pipeline-analyst",
+        "sales-proposal-strategist",
+        "product-behavioral-nudge-engine",
+        "product-feedback-synthesizer",
+        "product-sprint-prioritizer",
+        "product-trend-researcher",
+        "project-management-experiment-tracker",
+        "project-management-jira-workflow-steward",
+        "project-management-project-shepherd",
+        "project-management-studio-operations",
+        "project-management-studio-producer",
+        "project-manager-senior",
+        "support-analytics-reporter",
+        "support-executive-summary-generator",
+        "support-finance-tracker",
+        "support-infrastructure-maintainer",
+        "support-legal-compliance-checker",
+        "support-support-responder",
+        "testing-accessibility-auditor",
+        "testing-api-tester",
+        "testing-evidence-collector",
+        "testing-performance-benchmarker",
+        "testing-reality-checker",
+        "testing-test-results-analyzer",
+        "testing-tool-evaluator",
+        "testing-workflow-optimizer",
+        "agents-orchestrator",
+        "specialized-cultural-intelligence-strategist",
+        "specialized-developer-advocate",
+        "specialized-model-qa",
+        "sales-data-extraction-agent",
+        "accounts-payable-agent",
+        "compliance-auditor",
+        "agentic-identity-trust",
+        "drupal-frontend-dev",
+        "drupal-backend-dev",
+        "wordpress-frontend-dev",
+        "wordpress-plugin-dev"
+      ]
+    },
+    "exec": {
+      "security": "full"
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "coo",
+      "match": {
+        "channel": "discord",
+        "accountId": "coo"
+      }
+    },
+    {
+      "agentId": "cmo",
+      "match": {
+        "channel": "discord",
+        "accountId": "cmo"
+      }
+    },
+    {
+      "agentId": "cro",
+      "match": {
+        "channel": "discord",
+        "accountId": "cro"
+      }
+    },
+    {
+      "agentId": "cto",
+      "match": {
+        "channel": "discord",
+        "accountId": "cto"
+      }
+    },
+    {
+      "agentId": "qa",
+      "match": {
+        "channel": "discord",
+        "accountId": "qa"
+      }
+    },
+    {
+      "agentId": "prd",
+      "match": {
+        "channel": "discord",
+        "accountId": "prd"
+      }
+    },
+    {
+      "agentId": "dave",
+      "match": {
+        "channel": "discord",
+        "accountId": "dave"
+      }
+    },
+    {
+      "agentId": "drstone",
+      "match": {
+        "channel": "discord",
+        "accountId": "drstone"
+      }
+    }
+  ],
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw",
+    "allowFrom": {
+      "discord": [
+        "user:118658938051756033"
+      ]
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "token": "[REDACTED]",
+      "allowBots": true,
+      "groupPolicy": "allowlist",
+      "streaming": "off",
+      "dmPolicy": "open",
+      "allowFrom": [
+        "user:118658938051756033",
+        "*"
+      ],
+      "guilds": {
+        "722415039696338944": {
+          "channels": {
+            "1089519851992776834": {
+              "allow": true
+            },
+            "969238908632191037": {
+              "allow": true
+            },
+            "964451465370402896": {
+              "allow": true
+            },
+            "1010910867265908798": {
+              "allow": true
+            },
+            "964451476988657665": {
+              "allow": true
+            },
+            "1060172066529226772": {
+              "allow": true
+            },
+            "1474208519875067974": {
+              "allow": true
+            }
+          }
+        }
+      },
+      "threadBindings": {
+        "spawnSubagentSessions": true
+      },
+      "voice": {
+        "enabled": true,
+        "tts": {
+          "provider": "openai"
+        }
+      },
+      "accounts": {
+        "default": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "1089519851992776834": {
+                  "allow": true
+                },
+                "969238908632191037": {
+                  "allow": true
+                },
+                "964451465370402896": {
+                  "allow": true
+                },
+                "1010910867265908798": {
+                  "allow": true
+                },
+                "964451476988657665": {
+                  "allow": true
+                },
+                "1060172066529226772": {
+                  "allow": true
+                },
+                "1474208519875067974": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "coo": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "1089519851992776834": {
+                  "allow": true
+                },
+                "969238908632191037": {
+                  "allow": true
+                },
+                "1010910867265908798": {
+                  "allow": true
+                },
+                "964451476988657665": {
+                  "allow": true
+                },
+                "1003574502388666378": {
+                  "allow": true
+                }
+              }
+            }
+          },
+          "voice": {
+            "autoJoin": [
+              {
+                "guildId": "722415039696338944",
+                "channelId": "964451476988657665"
+              }
+            ]
+          }
+        },
+        "cto": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "1089519851992776834": {
+                  "allow": true
+                },
+                "969238908632191037": {
+                  "allow": true
+                },
+                "1003574502388666378": {
+                  "allow": true
+                },
+                "1474208519875067974": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "cmo": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "1089519851992776834": {
+                  "allow": true
+                },
+                "969238908632191037": {
+                  "allow": true
+                },
+                "1003574502388666378": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "cro": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "1089519851992776834": {
+                  "allow": true
+                },
+                "969238908632191037": {
+                  "allow": true
+                },
+                "1060172066529226772": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "qa": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "1089519851992776834": {
+                  "allow": true
+                },
+                "969238908632191037": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "prd": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "1089519851992776834": {
+                  "allow": true
+                },
+                "969238908632191037": {
+                  "allow": true
+                },
+                "1010910867265908798": {
+                  "allow": true
+                },
+                "1003574502388666378": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "dave": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "969238908632191037": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "drstone": {
+          "token": "[REDACTED]",
+          "allowBots": true,
+          "groupPolicy": "allowlist",
+          "streaming": "off",
+          "guilds": {
+            "722415039696338944": {
+              "channels": {
+                "969238908632191037": {
+                  "allow": true
+                },
+                "1474208519875067974": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:4200",
+        "http://127.0.0.1:4200",
+        "http://host.docker.internal:4200",
+        "chrome-extension://dekbenkkmdboedfoepchplliadhieidl",
+        "https://openclaw.wembassy.com"
+      ],
+      "allowInsecureAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "[REDACTED]"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "http": {
+      "endpoints": {
+        "chatCompletions": {
+          "enabled": true
+        }
+      }
+    },
+    "nodes": {
+      "denyCommands": []
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "load": {
+      "paths": []
+    },
+    "slots": {
+      "memory": "openclaw-mem0"
+    },
+    "entries": {
+      "discord": {
+        "enabled": true
+      },
+      "openclaw-mem0": {
+        "enabled": true
+      },
+      "memory-core": {
+        "enabled": false
+      },
+      "memory-lancedb": {
+        "enabled": false
+      }
+    },
+    "installs": {
+      "openclaw-mem0": {
+        "source": "npm",
+        "spec": "@mem0/openclaw-mem0",
+        "installPath": "/Users/chrismcintosh/.openclaw/extensions/openclaw-mem0",
+        "version": "0.2.0",
+        "resolvedName": "@mem0/openclaw-mem0",
+        "resolvedVersion": "0.2.0",
+        "resolvedSpec": "@mem0/openclaw-mem0@0.2.0",
+        "integrity": "sha512-jSBBbfbcNmZ0OMcJ2wx1+I2aQ0s6M0Mi09nvGxHPItqazqeA29pbgLU5mFgNRkN77TfSGMwB6KevdlpKDqdynw==",
+        "shasum": "3c67ed53f3f20e06441ccf24013200f28835a055",
+        "resolvedAt": "2026-03-10T03:16:36.982Z",
+        "installedAt": "2026-03-10T03:16:55.049Z"
+      }
+    }
+  }
+}
